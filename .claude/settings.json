@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import yaml; print\\('ok'\\)\")",
+      "Bash(pip3 install *)",
+      "Bash(python3.13 -c \"import yaml; print\\('ok'\\)\")",
+      "Read(//usr/**)",
+      "Bash(python3 -c \"import sys; print\\(sys.path\\)\")",
+      "Read(//home/alexgris/Downloads/Projects/my-jekyll-tech-blog/**)",
+      "WebFetch(domain:alexandrugris.github.io)"
+    ]
+  }
+}

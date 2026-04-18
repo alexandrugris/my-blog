@@ -12,7 +12,9 @@ echo "Building site..."
 python3 build.py
 
 echo "Copying to $PAGES_DIR ..."
-rsync -a --delete html/ "$PAGES_DIR/"
+find "$PAGES_DIR" -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+cp -r html/. "$PAGES_DIR/"
+touch "$PAGES_DIR/.nojekyll"
 
 cd "$PAGES_DIR"
 
