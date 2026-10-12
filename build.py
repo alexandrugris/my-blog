@@ -432,6 +432,7 @@ def page_html(title: str, body: str, prefix: str, description: str = "") -> str:
         <a class="page-link" href="{prefix}index.html">Home</a>
         <a class="page-link" href="{prefix}about/index.html">About</a>
         <a class="page-link" href="{prefix}sm/index.html">Social Media</a>
+        <a class="page-link" href="https://alexandrugris.ro/" target="_blank" rel="noopener noreferrer">alexandrugris.ro<span aria-hidden="true"> ↗</span><span class="visually-hidden"> (opens in a new tab)</span></a>
       </div>
     </nav>
   </div>
