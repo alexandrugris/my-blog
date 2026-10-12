@@ -212,7 +212,7 @@ This means that, having two actors that communicate over a channel, each actor c
 
 The most important function here is `powModulo`. We notice that it `base^x % modulo == 0`, the result of the power function will be `0` from that point on. So we need to avoid that. 
 
-![Example](../assets/crypto_2.png)
+![Example](../assets/crypto_2.webp)
 
 Let's look at little bit at the results of `powModulo`:
 
@@ -220,7 +220,7 @@ Let's look at little bit at the results of `powModulo`:
 - At each step, it returns a value between `0` and `n-1`. We want to avoid `0`s because, otherwise,from that point on, the function will always return `0`.
 - The function loops through the same values once it returns `1` again. 
 
-![Example](../assets/crypto_3.png)
+![Example](../assets/crypto_3.webp)
 
 What does it mean for someone who is listening to this conversation to guess our initial, hidden number? It means that he/she guesses a number `g` such that `INITIAL_BASE^g % n` is the observed number transmitted over the network. He/she can do this by substituting numbers from `1 ... n` in the formula and compare the result with the observed number. It is worth to notice that this `g` does not necessary need to be the number we initially thought of, but rather any value that satisfies the above condition will also satisfy `powModulo (othersRand[i], internalRandoms[i] == powModulo (othersRand[i], g[i]))`, which employed when generating the shared password.
 
@@ -279,7 +279,7 @@ Since we want for someone in the middle to be as hard as possible to guess which
 
 Now, even if `(INITIAL_BASE^(n-1) mod n) == 1`, it might be that `1` is also reached for factors of `n-1`. For example, if we set `INITIAL_BASE = 3,  n = 23`, we have ones also for `11`. In practice, `INITIAL_BASE` can be a small number, good choices being `2, 3, 5, 7`.
 
-![Example](../assets/crypto_1.png)
+![Example](../assets/crypto_1.webp)
 
 This example demonstrate three points:
 

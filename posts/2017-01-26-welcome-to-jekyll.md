@@ -14,11 +14,11 @@ I was looking for a simple blogging platform that provided for my following need
 Writing content in Markdown seemed like a good, simple idea. Easy to write, total control over content, no complex editors, no vendor lock-in. 
 Here is a screenshot of my editing experience in Visual Studio Code:
 
-![Edit experience in Visual Studio Code](../assets/jekyll_editing_experience.png)
+![Edit experience in Visual Studio Code](../assets/jekyll_editing_experience.webp)
 
 and simple publishing to github through a basic batch script:
 
-![Github Publish](../assets/jekyll_publish.png)
+![Github Publish](../assets/jekyll_publish.webp)
 
 As a bonus, Jekyll also offers powerful support for code snippets. Being a technical blog, this was just great.
 

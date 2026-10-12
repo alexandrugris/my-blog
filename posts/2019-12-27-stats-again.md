@@ -100,7 +100,7 @@ df_for_test = pd.crosstab(df['Headings'], df['Clicks']).T
 chi2, p_value, degrees_of_freedom, expected_values = chi2_contingency(df_for_test.values)
 ```
 
-![Chi2](../assets/stats_2.png)
+![Chi2](../assets/stats_2.webp)
 
 
 The return values are described below:
@@ -411,7 +411,7 @@ coefs.plot()
 plt.show()    
 ```
 
-![Lasso feature selection](../assets/stats_1.png)
+![Lasso feature selection](../assets/stats_1.webp)
   
 Before finishing, here is how to automatically compute the `lambda` regularization parameter by using the Akaike Information Criterion and then by employing Cross Validation.
 

@@ -144,7 +144,7 @@ results = solve(q, x)
 
 with the following output if ran from the ipython console
 
-![ipython output](../assets/smp_1.png)
+![ipython output](../assets/smp_1.webp)
 
 The `solve` function is not limited only to polynomials. For example, `solve(sin(x)/x)` will correctly output the value `[pi]` - [docs](http://docs.sympy.org/dev/modules/solvers/solvers.html)
 
@@ -200,7 +200,7 @@ p[1].line_color = 'r'
 p.show()
 ```
 
-![Plotting](../assets/smp_2.png)
+![Plotting](../assets/smp_2.webp)
 
 ### Sets
 
@@ -320,7 +320,7 @@ print(A * B == B * A)
 
 The following code should be run line by line in an interpreter like IPython. For my own play, I am using `select line + CTRL+ENTER` in Spyder.
 
-![CTRL+ENTER in Spyder](../assets/smp_3.png)
+![CTRL+ENTER in Spyder](../assets/smp_3.webp)
 
 ```python
 import sympy as sp

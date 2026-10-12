@@ -114,7 +114,7 @@ static void test_symmetricJCE()
 
 In the picture below we can observe that the secret key is just an array of bytes, similar to what we have seen when we implemented the algorithm from scratch, in the previous post.
 
-![Secret Key](../assets/crypto3_2.png)
+![Secret Key](../assets/crypto3_2.webp)
 
 It is important to note that, if two messages start with the same bytes, the first bytes in the encrypted string for both of them will be the same, if we use the same initialization vector. Therefore, it is good practice to change the initialization vector with each message.
 
@@ -154,7 +154,7 @@ In the picture below we can see the public / private key pair expanded. We obser
 - `e`, the public exponent - shared (encrypting) - the requirement for this is to be relatively prime to `p-1` and `q-1`. A commonly used exponent is `65537` since it is a prime number all together .
 - `d`, the private exponent - shared (decrypting) - 
 
-![Public / Private Key Pair](../assets/crypto3_3.png)
+![Public / Private Key Pair](../assets/crypto3_3.webp)
 
 *Several important notes:*
 

@@ -92,7 +92,7 @@ lynx_ts = pd.Series(
 lynx_ts.plot()
 ```
 
-![Lynx TS](../assets/tsa_lynx.png)
+![Lynx TS](../assets/tsa_lynx.webp)
 
 ```python
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
@@ -100,9 +100,9 @@ plot_acf(lynx_ts, lags=100)
 plot_pacf(lynx_ts, lags=10)
 ```
 
-![ACF](../assets/tsa_acf.png)
+![ACF](../assets/tsa_acf.webp)
 
-![PACF](../assets/tsa_pacf.png)
+![PACF](../assets/tsa_pacf.webp)
 
 We see in these charts that autocorrelation decreases as we look backwards in the series. This means that we are likely dealing with an auto-regressive process. If we are to build an auto-regressive model for this series we'll probably consider the coefficients for the 1, 2, 4 and 6 lags. The blue bands are the error margin; everything within the bands are not statistically significant. The coefficient with index 0 is always 1, as it is the correlation of the timeseries with itself. 
 
@@ -118,9 +118,9 @@ plot_pacf(white_noise)
 plt.show()
 ```
 
-![ACF White Noise](../assets/ts_acf_white_noise.png)
+![ACF White Noise](../assets/ts_acf_white_noise.webp)
 
-![PACF White Noise](../assets/ts_pacf_white_noise.png)
+![PACF White Noise](../assets/ts_pacf_white_noise.webp)
 
 Let's plot a perfect AR(1) model, with no noise.
 
@@ -151,16 +151,16 @@ plt.show()
 
 The time series converges to `miu=phi_0 / (1-phi_1) = 50`. 
 
-![Perfect AR converges to expected value](../assets/ts_perfect_ar_1.png)
+![Perfect AR converges to expected value](../assets/ts_perfect_ar_1.webp)
 
-![Perfect AR(1) ACF](../assets/ts_perfect_ar_1_acf.png)
+![Perfect AR(1) ACF](../assets/ts_perfect_ar_1_acf.webp)
 
-![Perfect AR(1) PACF](../assets/ts_perfect_ar_1_pacf.png)
+![Perfect AR(1) PACF](../assets/ts_perfect_ar_1_pacf.webp)
 
 
 The same expected value can be observed if we increase the noise:
 
-![Noisy AR(1)](../assets/ts_ar1_noisy.png)
+![Noisy AR(1)](../assets/ts_ar1_noisy.webp)
 
 Now, let's plot an MA (moving average) process:
 
@@ -181,11 +181,11 @@ plot_pacf(ts3, lags=40)
 plt.show()
 ```
 
-![MA(1)](../assets/ts_ma1.png)
+![MA(1)](../assets/ts_ma1.webp)
 
-![MA(1) ACF](../assets/ts_ma1_acf.png)
+![MA(1) ACF](../assets/ts_ma1_acf.webp)
 
-![MA(1) PACF](../assets/ts_ma1_pacf.png)
+![MA(1) PACF](../assets/ts_ma1_pacf.webp)
 
 
 Unlike an autoregressive process, which has a slowly decaying ACF, the definition of the MA process ensures a sharp cutoff of the ACF for any value greater than q, the order of the MA process. This is because an autoregressive process depends on previous terms, and they incorporate previous impulses to the system, whereas an MA model, incorporating the impulses directly through their value, has a mechanism to stop the impulse propagation from progressing indefinitely. This also means that, forecasting beyond the value lag value of q will only return the mean, since there is no more noise to incorporate.
@@ -250,11 +250,11 @@ plt.show()
 plot_pacf(arma_series)
 plt.show()
 ```
-![Time Series](../assets/ts_ts.png)
+![Time Series](../assets/ts_ts.webp)
 
-![Time Series ACF](../assets/ts_ts_acf.png)
+![Time Series ACF](../assets/ts_ts_acf.webp)
 
-![Time Series PACF](../assets/ts_ts_pacf.png)
+![Time Series PACF](../assets/ts_ts_pacf.webp)
 
 We observe a sharp cutoff in the PACF after lag 1 and slow decay in the ACF. This leads to try to fit an `ARIMA(1, 0, 0)`.
 
@@ -268,7 +268,7 @@ plt.plot(results.fittedvalues, color="orange")
 print(results.arparams) # 0.78
 ```
 
-![Fitted time series (orange)](../assets/ts_ts_fitted.png)
+![Fitted time series (orange)](../assets/ts_ts_fitted.webp)
 
 A pretty good approximation of the initial complex model can be obtained with an AR(1) model. Let's analyse the residuals to see how much information did we capture in our model and if there are autoregressive behaviors we have missed. In our case residuals are normally distributed as seen in the histogram and proven by the Shapiro test and in the ACF and PACF plots we do not see any autoregressive tendencies we might have missed.
 
@@ -289,11 +289,11 @@ plot_pacf(resid)
 plt.show()
 ```
 
-![Residuals Histogram](../assets/ts_residuals.png)
+![Residuals Histogram](../assets/ts_residuals.webp)
 
-![Residuals ACF](../assets/ts_residuals_acf.png)
+![Residuals ACF](../assets/ts_residuals_acf.webp)
 
-![Residuals PACF](../assets/ts_residuals_pacf.png)
+![Residuals PACF](../assets/ts_residuals_pacf.webp)
 
 Returning to our Lynx timeseries which was shown earlier, let's train an ARIMA model and see how it fits.
 
@@ -306,7 +306,7 @@ plt.plot(results.fittedvalues, color="orange")
 print(results.arparams)
 ```
 
-![Lynx model fit](../assets/tsa_lynx_arima.png)
+![Lynx model fit](../assets/tsa_lynx_arima.webp)
 
 Exported notebook is [here](https://alexandrugris.ro/timeseries.html)
 

@@ -25,7 +25,7 @@ c:>docker exec -it zealous_meninsky mongo
 `docker ps -a` lists containers and their names. `docker run -it zealous_meninsky mongo` runs interactively in the container named `zealous_meninsky` the `mongo` command. 
 `-it` wires both the stdin and stdout from the container, not just the stdout.
 
-![Output](../assets/docker_1.png)
+![Output](../assets/docker_1.webp)
 
 If you don't like the default name, in this case `zealous_meninsky`, just pass the `--name _Name_I_Like_` after the `docker run`:
 
@@ -63,7 +63,7 @@ In order to list the images:
 c:>docker images
 ```
 
-![Docker Images](../assets/docker_4.png)
+![Docker Images](../assets/docker_4.webp)
 
 And, of course, 
 ```
@@ -75,11 +75,11 @@ to remove the MongoDB image.
 
 In order to run Linux containers, Docker spins off a Linux virtual machine. Attention: docker may run out of memory in this VM as, by default, it is set to only 2GB. 
 
-![Hyper-V VM with Docker](../assets/docker_2.png)
+![Hyper-V VM with Docker](../assets/docker_2.webp)
 
 Setting the memory limit can be done through the Docker Settings UI, accessible from the tray icon. In my installation I set it to 4GB.
 
-![Docker Settings](../assets/docker_3.png)
+![Docker Settings](../assets/docker_3.webp)
 
 ### Mapping a port in the container to a port on localhost
 
@@ -107,7 +107,7 @@ First we run
 c:>ipconfig
 ```
 
-![ipconfig](../assets/docker_5.png)
+![ipconfig](../assets/docker_5.webp)
 
 Then we launch a new container, this time not with the server but with the `mongo` client. Please notice the `run` (not `exec`) command the the double `mongo mongo`
 
@@ -117,7 +117,7 @@ c:>docker run -it mongo mongo mongodb://172.18.144.1
 
 We get the following:
 
-![Mongo connected](../assets/docker_6.png)
+![Mongo connected](../assets/docker_6.webp)
 
 So what we did was to connect an application (the mongo client) launched in a new container to the localhost, where we had previously mapped the default mongo port from another container.
 
@@ -132,11 +132,11 @@ I will run IIS in a nanoserver instance, as it is an only 400 MB download. :) Th
 c:>docker run -d --name My_IIS microsoft/iis:nanoserver
 c:>docker inspect My_IIS
 ```
-![IIS IP Address](../assets/docker_7.png)
+![IIS IP Address](../assets/docker_7.webp)
 
 And, of course, in Edge, connecting directly to the address obtained from `docker inspect`:
 
-![IIS IP Address](../assets/docker_8.png)
+![IIS IP Address](../assets/docker_8.webp)
 
 
 

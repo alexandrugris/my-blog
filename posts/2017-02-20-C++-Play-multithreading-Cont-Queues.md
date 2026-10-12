@@ -500,7 +500,7 @@ In the following pictures I am only looking at the `get` function. Please note t
 
 
 
-![blocking_queue - release](../assets/queue_1.png)
+![blocking_queue - release](../assets/queue_1.webp)
 
 *Blocking queue with CRITICAL_SECTION synchronization in release mode* 
 
@@ -510,7 +510,7 @@ Also noticeable is that CPUs are used to about 70% of their capacity - here we r
 
 
 
-![multi-queue - release](../assets/queue_2.png)
+![multi-queue - release](../assets/queue_2.webp)
 
 *Multi queue with CRITICAL_SECTION synchronization in release mode*
 
@@ -521,7 +521,7 @@ A direct comparison of the CPU time spent might be misleading though. We notice 
 
 
 
-![multi-queue - debug](../assets/queue_3.png)
+![multi-queue - debug](../assets/queue_3.webp)
 
 *Multi queue in debug*
 
@@ -529,7 +529,7 @@ In the `get` method, only around 6% spent in trying to actively obtain the lock 
 
 
 
-![multi-queue - debug](../assets/queue_4.png)
+![multi-queue - debug](../assets/queue_4.webp)
 
 *Single queue in debug, with std::mutex*
 

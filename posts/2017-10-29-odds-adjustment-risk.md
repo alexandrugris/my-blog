@@ -104,7 +104,7 @@ x, y = beta_pdf_array(7, 3, 100)
 plt.plot(x, y, color="green")
 ```
 
-![Beta Distribution](../assets/bayes_1.png)
+![Beta Distribution](../assets/bayes_1.webp)
 
 The larger alpha and beta are, the narrower the distribution is. For example, if alpha and beta are both 1, it’s just the uniform distribution (centered at 0.5, very dispersed). 
 If alpha is much larger than beta, most of the weight is near 1.
@@ -214,10 +214,10 @@ learned_lambda = p * players.mean() + (1-p) * player_in_question_lambda
 ```
 
 The simulated players cluster array:
-![Simulated player array](../assets/bayes_5.png)
+![Simulated player array](../assets/bayes_5.webp)
 
 The results of the our player in this context:
-![Results](../assets/bayes_6.png)
+![Results](../assets/bayes_6.webp)
 
 The example above is run with the following parameters:
 - The player in question is simulated with a poisson mean of `lambda=0.5` average goals per match. The simulated results contain plenty of zeros, but also some ones and twos: `array([1, 2, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0])`.
@@ -453,7 +453,7 @@ TODO: look into this: [Dirichlet distribution](https://en.wikipedia.org/wiki/Dir
 
 ### The results
 
-![Results](../assets/bayes_2.png)
+![Results](../assets/bayes_2.webp)
 
 *The scenario above:*
 - We start with an offering of `[2.5, 3.5, 2.8]`
@@ -482,11 +482,11 @@ Worst case profit: : mean: 675.39, stddev: 705.46
 Min profit % of total stakes 1.29: 
 ```
 
-![Results](../assets/bayes_3.png)
+![Results](../assets/bayes_3.webp)
 
 If we consider 10000 bets per match, the results are much more stable and the profit much better even in the worst case:
 
-![Results](../assets/bayes_4.png)
+![Results](../assets/bayes_4.webp)
 
 [Full source code](https://github.com/alexandrugris/RiskWithPython/blob/master/risk.py)
 

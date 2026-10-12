@@ -11,7 +11,7 @@ In this post I will write about [green threads](https://en.wikipedia.org/wiki/Gr
 
 You have N CPUs and M threads, where M >> N  - the case for actors, for instance. You know that these M threads will most likely interact with each other (either passing messages or synchronizing on some primitive). You might also have I/O and you want to keep the program flow simple and not pollute it with lots of callbacks - synchronous I/O code is clearly much simpler to read than async I/O, but also more heavy on the OS. These problems are suitable for considering a cooperative scheduling approach.
 
-![vs_run]({{site.ur}}/assets/green_threads_1.png)
+![vs_run](../assets/green_threads_1.webp)
 
 ### The API and the test scenario
 

@@ -13,12 +13,12 @@ A post about computer graphics, for the web mostly, with JavaScript, WebGL, Thre
 
 By the end of this blog post we will build this: 
 
-![Three JS Editor](../assets/webgl_2.png)
+![Three JS Editor](../assets/webgl_2.webp)
 
 
 By default, ThreeJS already has built in materials for most of the effects one might want to add to a scene. I addition to what is already built in, there are lots of samples and pre-made effects in the form of libraries on github. Therefore, for most work, it be used entirely from JavaScript. While the API is clean and short and performs as expected, a little bit of maths and graphics background will still be needed sooner or later in the project.
 
-![Three JS Editor](../assets/webgl_1.png)
+![Three JS Editor](../assets/webgl_1.webp)
 
 
 ### Initialization and The First Scene
@@ -300,7 +300,7 @@ function update(dt){
 
 Something like the following scene should appear in the browser. The full code is in my github account, in the WebGL project. 
 
-![JS Scene](../assets/webgl_3.png)
+![JS Scene](../assets/webgl_3.webp)
 
 The scene contains:
 - The red wireframe cube rotating (`my-box`) with the `AxesHelper` added and rotating with its parent.
@@ -855,12 +855,12 @@ And the shaders:
 
 And that was my first play with WebGL and ThreeJS. I will soon publish the demo somewhere but might not work on my video cards.
 
-![Earth](../assets/webgl_4.png)
+![Earth](../assets/webgl_4.webp)
 
 
-![Earth](../assets/webgl_5.png)
+![Earth](../assets/webgl_5.webp)
 
 
-![Earth](../assets/webgl_6.png)
+![Earth](../assets/webgl_6.webp)
 
 

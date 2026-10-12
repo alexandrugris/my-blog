@@ -11,7 +11,7 @@ This post is about implementing a 3D renderer from scratch, with no help from an
 
 We are going to build our software renderer to show this:
 
-![Head](../assets/tiny_1.png)
+![Head](../assets/tiny_1.webp)
 
 The features our software renderer suppors are:
 
@@ -30,7 +30,7 @@ In addition to these, we will build a small and probably buggy maths library. Al
 
 First and foremost, we will operate in the coordiate system with the z-axis pointing towards us, y-axis upwards and the x-axis rightwards. 
 
-![Head](../assets/tiny_2.png)
+![Head](../assets/tiny_2.webp)
 
 In addition to that, the model we will load is oriented towards z-axis. Also, by convention, we will consider triangles defined as counter-clockwise. This will help us later determine what is the front and what is the the back face of the triangle. 
 
@@ -91,7 +91,7 @@ projectionTransform = getIdentityMatrix(4); // no projection
 cameraTransform = makeIdentityCamMatrix(); // no camera transformation
 ```
 
-![Head](../assets/tiny_3.png)
+![Head](../assets/tiny_3.webp)
 
 Since `projectionTransform` and `cameraTransform` are identity matrices, it means that the only transformation in place is the `viewportTransform`. This transform takes a coordiante space defined by the rectangle `x, y = [-1, 1], [-1, 1]`, with `y` pointing upwards, and transforms it to pixel on the screen coordiantes.
 
@@ -119,7 +119,7 @@ It also transforms the z-buffer, but that is another chapter.
 
 Before we move to shading triangles, let's first render our model in wireframe:
 
-![Head](../assets/tiny_4.png)
+![Head](../assets/tiny_4.webp)
 
 For this, let's look at our `generateImage` function and what it does if the `wireframe` parameter is set to `true`.
 
@@ -417,7 +417,7 @@ function makeFullScreenCanvas(){
 
 And, before we go, let's have a look once again at our model with all the transformations applied - this should be the output of running the code from github.
 
-![Head](../assets/tiny_5.png)
+![Head](../assets/tiny_5.webp)
 
 
 

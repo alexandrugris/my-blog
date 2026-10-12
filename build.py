@@ -500,7 +500,7 @@ def render_index(posts: list) -> str:
 
     body = f"""<div class="home">
 
-  <img src="assets/alexandrugris.png" class="face-alex-gris" alt="This is me">
+  <img src="assets/alexandrugris.webp" class="face-alex-gris" alt="This is me">
 
   <h2>Welcome to my technology blog</h2>
   <p>Sometimes I take a few hours over the weekends or in the airports to try new things.
@@ -575,7 +575,7 @@ def render_about() -> str:
     <h1 class="post-title">About</h1>
   </header>
   <div class="post-content">
-    <img src="../assets/alexandrugris.png" class="face-alex-gris" alt="Alexandru Gris">
+    <img src="../assets/alexandrugris.webp" class="face-alex-gris" alt="Alexandru Gris">
     <p>Software engineer and technology enthusiast. I experiment with C++, Go, Python,
     machine learning, cryptography, distributed systems and everything in between.
     This blog is a collection of weekend experiments and notes to my future self.</p>

@@ -210,7 +210,7 @@ psql>SELECT * FROM ONLY test_ids;
 
 pgAdmin is a great tool to play around and visualize query execution plans:
 
-![pgAdmin](../assets/postgres_1.png)
+![pgAdmin](../assets/postgres_1.webp)
 
 Postgres has the ability to set per-query parameters to optimize execution.
 
@@ -314,7 +314,7 @@ From postgresql documentation, regarding cost:
 
 | The most critical part of the display is the estimated statement execution cost, which is the planner's guess at how long it will take to run the statement (measured in cost units that are arbitrary, but conventionally mean disk page fetches). Actually two numbers are shown: the start-up cost before the first row can be returned, and the total cost to return all the rows. For most queries the total cost is what matters, but in contexts such as a subquery in EXISTS, the planner will choose the smallest start-up cost instead of the smallest total cost (since the executor will stop after getting one row, anyway). Also, if you limit the number of rows to return with a LIMIT clause, the planner makes an appropriate interpolation between the endpoint costs to estimate which plan is really the cheapest.
 
-![Running Explain From PyCharm](../assets/postgres_2.png)
+![Running Explain From PyCharm](../assets/postgres_2.webp)
 
 ### Triggers
 
@@ -690,4 +690,4 @@ select get_team_by_prefix('Dynamo Kyi'); -- will return Dinamo Kiev, followed by
 select get_team_by_prefix('New York Ran'); -- will return Rangers New York
 ```
 
-![Running the queries](../assets/postgres_3.png)
+![Running the queries](../assets/postgres_3.webp)

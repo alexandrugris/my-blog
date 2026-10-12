@@ -20,7 +20,7 @@ Hazelcast is an in-memory data grid, which allows to scale our applications dyna
 
 Create a simple java console application, with Hazelcast library added to it:
 
-![Config](../assets/hazelcast_1.png)
+![Config](../assets/hazelcast_1.webp)
 
 The server and the client share a very similar code, making applications symmetrical to write:
 
@@ -382,11 +382,11 @@ As said before, the invocation happens on the client, while the breakpoint set i
 
 *Client Node*
 
-![Config](../assets/hazelcast_2.png)
+![Config](../assets/hazelcast_2.webp)
 
 *Storage Node*
 
-![Config](../assets/hazelcast_3.png)
+![Config](../assets/hazelcast_3.webp)
 
 I am using here the `IMap::executeOnKey` method to run the `EntryProcessor` on a specific key. However, there are other useful methods to run `EP's`:
 - `IMap::executeOnEntries` which has an optional `Predicate` parameter to select the desired keys

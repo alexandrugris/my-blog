@@ -9,7 +9,7 @@ This post is a collection of several programming problems implemented in C++. It
 
 Here are all the problems running in the same executable file:
 
-![Running Problems](../assets/prog_cpp.png)
+![Running Problems](../assets/prog_cpp.webp)
 
 
 ### Problem 1 - Zero Or One Edits Away

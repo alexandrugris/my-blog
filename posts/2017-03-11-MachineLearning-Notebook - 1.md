@@ -8,7 +8,7 @@ This is the first part of my Machine Learning notebook. As I am totally new to M
 
 For this article, let's consider the following dataset:
 
-![Dataset](../assets/ml_1_4.png)
+![Dataset](../assets/ml_1_4.webp)
 
 The dataset has:
 - First columns - independent variables (loaded into the variable X in python below)
@@ -49,7 +49,7 @@ imputer = Imputer(missing_values='NaN',
 X[:, 1:3] = imputer.fit(X[:, 1:3]).transform(X[:, 1:3]); 
 ```
 
-![Spyder](../assets/ml_1_1.png)
+![Spyder](../assets/ml_1_1.webp)
 
 ***R***
 
@@ -67,7 +67,7 @@ dataset$Salary = ifelse(
                     dataset$Salary)
 ```
 
-![RStudio](../assets/ml_1_2.png)
+![RStudio](../assets/ml_1_2.webp)
 
 
 ***Back to Python***
@@ -97,7 +97,7 @@ X = OneHotEncoder(categorical_features=[0]).fit_transform(X).toarray();
 
 When we look at the data in the X variable we see:
 
-![Dummy Features](../assets/ml_1_3.png)
+![Dummy Features](../assets/ml_1_3.webp)
 
 For the dependent variable we don't need to make dummy features, thus we simply run:
 
@@ -188,7 +188,7 @@ In R, we only select the features we want to scale. Indices start from 1, we don
 training_set[, 2:3] = scale(training_set[, 2:3])
 test_set[, 2:3] = scale(test_set[, 2:3])
 ```
-![ML Feature Scaling](../assets/ml_1_5.png)
+![ML Feature Scaling](../assets/ml_1_5.webp)
 
 ### Some implementations:
 
@@ -273,5 +273,5 @@ import matplotlib.pyplot as plt;
 plt.plot(np.linspace(0, 10, 100), line_with_noise, 'ro')
 ```
 
-![Spyder](../assets/ml_1_6.png)
+![Spyder](../assets/ml_1_6.webp)
 

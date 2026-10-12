@@ -14,7 +14,7 @@ Examples might include the following:
 
 The architecture assumes large data volumes, potentially with a computationally intensive step required to compute the individual view. The architecture assumes the reducers, the components responsible for computation, can scale independently and recover from failures by restarts. Their stateless nature and dynamic scaling makes them very suitable for a deploying in a Kubernetes cluster. 
 
-![Architecture](../assets/arch_1.png)
+![Architecture](../assets/arch_1.webp)
 
 The picture above uses the terminology of a streaming system for distributing bookmaker odds to all connected web and mobile clients.
 

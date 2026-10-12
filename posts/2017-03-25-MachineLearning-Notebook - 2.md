@@ -49,7 +49,7 @@ plt.ylabel("Salary")
 plt.show()
 ```
 
-![Results](../assets/ml_3_1.png)
+![Results](../assets/ml_3_1.webp)
 
 The implementation of a simple linear regressor using the ordinary least squares method is straight forward:
 
@@ -93,7 +93,7 @@ The basic idea for all least squares methods is that the function `S=sum((yi-f(x
 
 Results:
 
-![Dataset](../assets/ml_3_5.png)
+![Dataset](../assets/ml_3_5.webp)
 
 Note:
 
@@ -186,7 +186,7 @@ TODO in a future post: how to numerically compute the [P-value](http://www.wikih
 
 The dataset:
 
-![Dataset](../assets/ml_3_2.png)
+![Dataset](../assets/ml_3_2.webp)
 
 Preparing the data:
 
@@ -222,7 +222,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 And the output: 
 
-![Dataset](../assets/ml_3_3.png)
+![Dataset](../assets/ml_3_3.webp)
 
 For the actual regression:
 
@@ -245,7 +245,7 @@ import statsmodels.formula.api as sm
 X = np.append(np.ones((50,1)), X, axis = 1)
 ```
 
-![New X](../assets/ml_3_4.png)
+![New X](../assets/ml_3_4.webp)
 
 To remember: the lower the P-value, the more statistically relevant the independent variable is going to be in our regression model.
 
@@ -360,7 +360,7 @@ coef = regressor.coef_
 intercept = regressor.intercept_
 ```
 
-![Identical results between library and own function](../assets/ml_3_6.png)
+![Identical results between library and own function](../assets/ml_3_6.webp)
 
 ### Polynomial regression
 
@@ -385,6 +385,6 @@ it uses a function `g(y - f(x)) = 0 if |y-f(x)| < epsilon and  y-f(x) otherwise`
 
 Below you can see the difference in error function between ridge regression and svm regression (screenshots from a MVA class on Machine Learning)
 
-![Ridge Regression](../assets/ml_3_7.png)
-![SVM Regression](../assets/ml_3_8.png)
+![Ridge Regression](../assets/ml_3_7.webp)
+![SVM Regression](../assets/ml_3_8.webp)
 

@@ -157,7 +157,7 @@ func main() {
 
 And the output:
 
-![Basic Service Running](../assets/gows1.png)
+![Basic Service Running](../assets/gows1.webp)
 
 To create a new product, we update the switch block from above with the following:
 
@@ -390,7 +390,7 @@ $psql -p 5432 -h localhost -U postgres
 
 In the screenshot below, I have also created a database called `products` and connected to it using the `\c` command
 
-![Postgres running](../assets/gows2.png)
+![Postgres running](../assets/gows2.webp)
 
 The next thing to do is to get the Postgres Go driver.
 

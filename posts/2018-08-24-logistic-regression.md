@@ -26,7 +26,7 @@ We notice that the Logistic function, `f(x) = 1 / (1+e^-(ax+b))`, has properties
 - it is continuous
 - has an inflection point from which `f(x)` grows quickly from close to 0 to close to 1
 
-![Logistic function](../assets/logistic_regression_8.png)
+![Logistic function](../assets/logistic_regression_8.webp)
 
 And the wikipedia link: [Logistic function](https://en.wikipedia.org/wiki/Logistic_function)
 
@@ -80,7 +80,7 @@ Now we can use gradient descent to find the vector `B`. Unfortunately this metho
 
 Excel file [here](../assets/iris.xlsx)
 
-![Solver Dialog](../assets/logistic_regression_1.png)
+![Solver Dialog](../assets/logistic_regression_1.webp)
 
 *Note:*
 
@@ -88,7 +88,7 @@ Performing the same steps for *virginica* leads also to very good results, while
 
 In the second iteration of the file, I have modified the regression so that it operates on standardized factors. This way, we can interpret the coefficients and see which factor contributes the most for classification. The picture below also contains the `log(odds)` vs `most important factor` chart, sorted by `odds = P(1) / P(0)`, the ratio between the probability of `1` and `0`. This is also a reminder that data for logistic regression should pe pepared in a similar manner to that for linear regression. 
 
-![Standardized Data](../assets/logistic_regression_2.png)
+![Standardized Data](../assets/logistic_regression_2.webp)
 
 *Note:*
 
@@ -106,13 +106,13 @@ Please remember that `p` is the probability for the event to happen, that is pro
 
 This function, `ln(Odds(p)) = ln(p/1-p)`, called the *logit function*, maps the probability space `[0,1]` to a linear space `[-inf, inf]` in which we can do the regression.
 
-![Logit function](../assets/logistic_regression_3.png)
+![Logit function](../assets/logistic_regression_3.webp)
 
 In order to use linear regression to compute the probabilities and thus build our classifier, we need in our input data probabilities as well. The Iris dataset, as presented above, has only 0 and 1 inputs, so we need to collapse it to intervals on which meaninful probabilities can be computed. 
 
 In this example we will use another dataset which is already collapsed:
 
-![Hypertensive men](../assets/logistic_regression_4.png)
+![Hypertensive men](../assets/logistic_regression_4.webp)
 
 The data is described as follows:
 - Number of men analysed
@@ -131,7 +131,7 @@ If we include an intercept, the intercept will reflect the amount of men include
 
 Please see how the variables for smoking, obese and snoring are codified. We want them to affect the slope of the regression, not the intercept.
 
-![Linear Regression](../assets/logistic_regression_5.png)
+![Linear Regression](../assets/logistic_regression_5.webp)
 
 *Logistic Regression*
 
@@ -154,13 +154,13 @@ We also added two more tables:
 - One under the logistic regression for drawing and validating how probabilities change for various fractions of Snoring, Smoking and Obese predictor variables.
 - One under the linear regression to validate how many standard deviations the observed ratio (probability) is from the theoretical probability obtained from the logistic regression. That is, assuming the probabilities from the regression are correct, how likely it is to have observed the value we have observed. For this, we used the theoretical mean and variance for the *binomial distribution*, `mean = sample_size * p` and `variance = sample_size * p * (1-p)`
 
-First run, the results without taking into consideration the sample size: [Logistic Regression](../assets/logistic_regression_6.png)
+First run, the results without taking into consideration the sample size: [Logistic Regression](../assets/logistic_regression_6.webp)
 
-![Logistic Regression](../assets/logistic_regression_6.png)
+![Logistic Regression](../assets/logistic_regression_6.webp)
 
-The second time we took into consideration the sample size by weightning the square of the residuals with the sample size when computing the square sum of the residuals we want to minimize. This is equivalent to having 1 row in the regression for each men that was considered in the regression. We see that this also minimizes the sum of the square standard scores, meaning that the results are now closer to the reality that was observed in the field. As a side note, I tried computing the `Bs` by minimizing directly the sum of the square standard scores and the results were very close to the ones predicted by the logistic regression. [Weighted Logistic Regression](../assets/logistic_regression_7.png)
+The second time we took into consideration the sample size by weightning the square of the residuals with the sample size when computing the square sum of the residuals we want to minimize. This is equivalent to having 1 row in the regression for each men that was considered in the regression. We see that this also minimizes the sum of the square standard scores, meaning that the results are now closer to the reality that was observed in the field. As a side note, I tried computing the `Bs` by minimizing directly the sum of the square standard scores and the results were very close to the ones predicted by the logistic regression. [Weighted Logistic Regression](../assets/logistic_regression_7.webp)
 
-![Weighted Logistic Regression](../assets/logistic_regression_7.png)
+![Weighted Logistic Regression](../assets/logistic_regression_7.webp)
 
 Excel file [here]((../assets/hypertensives.xlsx))
 
@@ -234,7 +234,7 @@ with open("iris_processed.csv", "w") as f:
 
 Summarized data looks like this: 
 
-![Summarized table](../assets/logistic_regression_9.png)
+![Summarized table](../assets/logistic_regression_9.webp)
 
 The predictor rows contain the middle of the group range for that particular bin, which does not reflect the actual mean of the data inside the bin. This is highly sensitive to outliers and thus a bad choice. A better way would have been to first split each predictor in equal-sized groups, compute the median for each group, and then use this number as part of the index for each bin. 
 
@@ -251,9 +251,9 @@ Excel file [here](../assets/iris_processed.xlsx)
 
 Results for the regression at a `0.5` threshold were not as good as with direct maximization of the log-of-probabilities, but rasing the threshhold at `0.8` leads to perfect prediction. Picture below:
 
-![Logistic regression](../assets/logistic_regression_10.png)
+![Logistic regression](../assets/logistic_regression_10.webp)
 
-And link here: [Logistic regression](../assets/logistic_regression_10.png)
+And link here: [Logistic regression](../assets/logistic_regression_10.webp)
 
 ### Conclusions
 

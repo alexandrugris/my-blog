@@ -340,7 +340,7 @@ In my demo the producer creates the routing topology with:
 - One exchange of type direct (`alexandrugris.1st_exchange`)
 - One one alternate exchange which is also the dead letter exchange (`alexandrugris.1st_exchange_dead_letter_exchnage`)
 
-![Exchanges](../assets/rabbitmq_3.png)
+![Exchanges](../assets/rabbitmq_3.webp)
 
 And two queues:
 - One queue connected to the the `1st_exchange`
@@ -348,13 +348,13 @@ And two queues:
 
 The producer dispatches roughly 99% of the messages to the right queue and 1% of the messages have a bogus routing key. Thus, if the producer is run without a consumer, we get the following:
 
-![Producer run without a consuming client](../assets/rabbitmq_1.png)
+![Producer run without a consuming client](../assets/rabbitmq_1.webp)
 
 It is visible that some messages are sent to the alternate exchange queue due to failed routing.
 
 The producer also sets a TTL to all the messages that are sent. Thus, after roughly a minute, we get the following:
 
-![Some messages moved to the DLX, some messages deleted](../assets/rabbitmq_2.png)
+![Some messages moved to the DLX, some messages deleted](../assets/rabbitmq_2.webp)
 
 Two things are worth noting:
 - The main bulk of the messages that were not consumed are moved to the dead letter queue

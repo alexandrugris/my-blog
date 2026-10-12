@@ -104,7 +104,7 @@ But how do we get the encrypting/decrypting exponent pairs and the modulo? The m
 5. If we select `e * d = k * (p-1)` where `k` is a constant and plug it in point 4, we obtain `(message^(p-1))^k * message % p = message` which is equivalent to `1^k * message % p = message` which is equivalent to `message % p = message`. 
 6. If we proceed in an identical manner on the `q` side, we get `e * d - 1 = k * (p-1) * (q-1)`. So we need to find `k` and `d`, both integers, which satisfy the above equation.
 
-![Finding the decryption exponent](../assets/crypto2_1.png)
+![Finding the decryption exponent](../assets/crypto2_1.webp)
 
 Let's do just that:
 
@@ -153,7 +153,7 @@ public static void test_asymmetricEncryption() throws Exception{
 }
 ```
 
-![Running the code above](../assets/crypto2_2.png)
+![Running the code above](../assets/crypto2_2.webp)
 
 
 The algorithm above is a very rudimentary implementation of the [*RSA* algorithm](https://en.wikipedia.org/wiki/RSA_(cryptosystem)).

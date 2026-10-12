@@ -19,7 +19,7 @@ The problem to solve: how do we know when we are dealing with noise and when we 
 
 The system behavior chart looks like this:
 
-![System Behavior Chart](../assets/sbc_1.png)
+![System Behavior Chart](../assets/sbc_1.webp)
 
 Columns:
 
@@ -45,11 +45,11 @@ It is important to note that in some of the cases, the rules above might not be 
 Below are some examples of valid signals, conforming to the rules above:
 
 
-![System Behavior Chart](../assets/sbc_2.png)
+![System Behavior Chart](../assets/sbc_2.webp)
 
-![System Behavior Chart](../assets/sbc_3.png)
+![System Behavior Chart](../assets/sbc_3.webp)
 
-![System Behavior Chart](../assets/sbc_4.png)
+![System Behavior Chart](../assets/sbc_4.webp)
 
 
 Please remember that blind comparison to the average without taking into consideration the full context of data or limited comparisons to a small amount of past data do not contribute to a good understanding of the system. A real understanding means identifying signals and trends. Actions derived from a poor system understanding will only amplify local errors, causing oscillations erratic behavior. 

@@ -49,7 +49,7 @@ plt.plot(x_axis, cdf(pdf(x_axis[1] - x_axis[0], gaussian(x_axis, 0, 1))))
 
 **Result:**
 
-![PDF, CDF](../assets/ml_2_1.png)
+![PDF, CDF](../assets/ml_2_1.webp)
 
 In order to draw the PDF, one needs to normalize the function so that its integral is 1 on the (-infinite,+infinite) interval - see the `pdf` function above. I kept the `pdf`, `cdf`, mean and `sigma` functions generic, so that they can be applied to any distribution, although for the Gaussian, pdf and cdf analytic formulas already exist. The integrals are computed incrementally, thus errors tend to accumulate. For precise results or for production code analytic formulas should be preferred (if they exist).
 
@@ -71,7 +71,7 @@ plt.plot(x_axis, pdf_func)
 plt.plot(x_axis, cdf(func))
 ```
 
-![PDF, CDF](../assets/ml_2_2.png)
+![PDF, CDF](../assets/ml_2_2.webp)
 
 ```python
 
@@ -104,11 +104,11 @@ rand_distributed_arr = rand_cdf(rand_0_1, cdf_func)
 plt.hist(rand_distributed_arr)
 
 ```
-![PDF, CDF](../assets/ml_2_3.png)
+![PDF, CDF](../assets/ml_2_3.webp)
 
 The `rand_cdf` takes as parameters two arrays - a uniform randomly distributed array with values between 0 and 1 and the CDF of the function I want my resulting random numbers to be distributed on. Then it computes the inverse of the CDF and uses the random numbers as indices in this array. Please see the CDF^(-1) below:
 
-![Inverse CDF](../assets/ml_2_4.png)
+![Inverse CDF](../assets/ml_2_4.webp)
 
 As one can notice, x axis is between (0,1) and y axis between (0, 1000), where 1000 is the size of the random number array. In plain English, it basically reads: "for any number received as parameter between 0 and 0.8, I will output a very small number. For any number higher than 0.8, I will output a larger number.". As my input is uniformly distributed between (0,1), The probability of outputting a smaller number is much higher than outputting a larger number. How much larger? It is precisely based on the CDF received as input. 
 
@@ -202,7 +202,7 @@ plt.plot(x_axis, e)
 
 With the output:
 
-![Entropy](../assets/ml_2_5.png)
+![Entropy](../assets/ml_2_5.webp)
 
 [Gini index](https://en.wikipedia.org/wiki/Gini_coefficient) 
 
@@ -240,7 +240,7 @@ Gini: 0.0 ; Max Gini: 0.8
 
 Evolution of Gini index (G) for a set of probabilities (p, 1-p):
 
-![Gini Index](../assets/ml_2_6.png)
+![Gini Index](../assets/ml_2_6.webp)
 
 Mean, median, entropy index (H) and Gini index (G) are different aggregate indices (summaries) for a distribution. Because our sample size is not large enough, they are subject to measurement errors. If we want to understand a little bit better how much error our computed index on the sample data hides, we can compute its distribution (its mean and its stddev). For instance, if we take the mean as the parameter we want to investigate, we obtain the mean of the mean and the stddev of mean. But any other index can be considered. Two outstanding methods are bootstrapping and K-fold cross validation.
 
@@ -266,7 +266,7 @@ rand_powerlaw_arr = rand_cdf(rand_0_1, cdf(powerlaw))
 plt.hist(rand_powerlaw_arr) # just check the distribution is power-law-ish
 ```
 
-![First distribution](../assets/ml_2_7.png)
+![First distribution](../assets/ml_2_7.webp)
 
 ```python
 # prepare space for mean for 500 trials
@@ -287,7 +287,7 @@ print("Mean of distribution: {:.4f}, Mean boostrapped: {:.4f}, Stddev mean boots
 
 And the output - shows the distribution of the mean is Gaussian:
 
-![First distribution](../assets/ml_2_8.png)
+![First distribution](../assets/ml_2_8.webp)
 
 ```
 Mean of distribution: 0.1402, Mean boostrapped: 0.1408, Stddev mean bootstrapped 0.0346 

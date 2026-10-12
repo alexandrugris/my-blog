@@ -13,11 +13,11 @@ Here is the first part: [Docker And Containers]({% post_url 2017-02-12-Docker-Co
 
 First thing, we need to enable drives to be visible within the container. For this, we use the Settings dialog from Docker For Windows.
 
-![Settings Dialog Mount FileSystem](../assets/docker_2_1.png)
+![Settings Dialog Mount FileSystem](../assets/docker_2_1.webp)
 
 Port 445 must be opened in the Windows Firewall.
 
-![Firewall warning](../assets/docker_2_2.png)
+![Firewall warning](../assets/docker_2_2.webp)
 
 > To share the drive, allow connections between the Windows host machine and the virtual machine in Windows Firewall or your third party firewall software. You do not need to open port 445 on any other network. 
 > By default, allow connections to 10.0.75.1 port 445 (the Windows host) from 10.0.75.2 (the virtual machine). 
@@ -27,7 +27,7 @@ Port 445 must be opened in the Windows Firewall.
 By default, the Docker network is considered in the Public Networks profile. 
 For my desktop PC at home, I have simply enabled firewall rules for the public networks (default is to block all inbound connections). This setting might be dangerous on a laptop.
 
-![Network rules](../assets/docker_2_3.png)
+![Network rules](../assets/docker_2_3.webp)
 
 Another option is to run `gpedit.msc` and change network profile for *Unidentifiable Networks*. :)
 
@@ -37,7 +37,7 @@ Now that we have enabled access to host folders, let's run the following command
 c:>docker run --rm -v d:\OneDrive\Pictures:/my_pictures alpine sh -c "cd /my_pictures && ls -l"
 ```
 
-![Running a command on a volume in docker](../assets/docker_2_4.png)
+![Running a command on a volume in docker](../assets/docker_2_4.webp)
 
 Let's disect it:
 
@@ -85,23 +85,23 @@ c:>docker run -it --env "USERNAME=agris" --rm --name debian_gcc_debug -p 2222:22
         && chown -hR $USERNAME /home/$USERNAME && bash"
 ```
 
-![Running the command above](../assets/docker_2_8.png)
+![Running the command above](../assets/docker_2_8.webp)
 
 - Type Linux password when prompted.
 
 - Create a Visual C++ for Linux project. Set connection to localhost on port 2222 (forwarded 22, the default sshd port, from the container)
 
-![Visual Studio Project Config](../assets/docker_2_5.png)
+![Visual Studio Project Config](../assets/docker_2_5.webp)
 
 - Set the debugger type to gdb. 
 
-![Visual Studio Project Config](../assets/docker_2_6.png)
+![Visual Studio Project Config](../assets/docker_2_6.webp)
 
 - Clean / Rebuild the project.
 
 - Happy debugging. :)
 
-![Visual Studio Project Config](../assets/docker_2_7.png)
+![Visual Studio Project Config](../assets/docker_2_7.webp)
 
 The container is run with the `--rm` flag above. You may want to remove it and save the image, not to have to install everything everytime the command is run. 
 

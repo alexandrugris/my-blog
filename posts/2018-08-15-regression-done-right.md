@@ -42,11 +42,11 @@ Let's look now at the residuals:
 - R^2 is high enough, but not too high. An R^2 higher than 90% almost surely means that the lag 1 autocorrelation is too high and we need to revise the model
 - And then we inspect the distribution of residuals vs X. Should be highly uncorrelated.
 
-![Residuals vs X](../assets/regression_1.png)
+![Residuals vs X](../assets/regression_1.webp)
 
 and the regression line
 
-![Regression Line](../assets/regression_2.png)
+![Regression Line](../assets/regression_2.webp)
 
 ### A not so good regression example
 
@@ -58,11 +58,11 @@ Let's consider now the same X as before, but this time Y defined in a square rel
 
 When we inspect the scatter plot of residuals vs X we see a pattern where should be none:
 
-![Residuals vs X](../assets/regression_3.png)
+![Residuals vs X](../assets/regression_3.webp)
 
 And the regression line showing also that the linear relationship does not properly capture the data:
 
-![Regression Line](../assets/regression_4.png)
+![Regression Line](../assets/regression_4.webp)
 
 ### Improving the regression
 
@@ -73,7 +73,7 @@ When we have a series that has an underlying pattern, we need to deflate the ser
 
 For small variations, up to 20%, the two formulas give almost identical results due to the mathematical properties of the natural logarithm. For higher variation, the logarithm shows excessive dampening of the values. See the chart below for `%returns` for a series computed through both methods.
 
-![Percentage returns ln vs difference](../assets/regression_5.png)
+![Percentage returns ln vs difference](../assets/regression_5.webp)
 
 Better than mine explanations [here](http://people.duke.edu/~rnau/411log.htm):
 
@@ -103,29 +103,29 @@ We will use logging in this example. Steps below:
 6. If the residuals exhibit the desired properties, compute Y as regression from X (undo the transformations). Please note that since the regression was based on increases, the whole process now is integrative, depending on the previous value. Therefore, the errors tend to accumulate the more periods we aim to forecast but also due to the high amplitude of the exponential transform. `Y-regressed(t) = EXP(y' + LN(y(t-1)))`
 7. Finally inspect the residuals of the full regression
 
-![All computation](../assets/regression_6.png)
+![All computation](../assets/regression_6.webp)
 
 Results inspection:
 
 Low `R^2`, lag 1 autocorrelation of only `0.08`, highly independent of X, seem rather normally distributed:
 
-![Log residuals](../assets/regression_7.png)
+![Log residuals](../assets/regression_7.webp)
 
 Reverting to initial scale (before the percentage returns transformation), residuals show a tendency to accumulate errors towards the right extreme.
 
-![Final residuals](../assets/regression_11.png)
+![Final residuals](../assets/regression_11.webp)
 
 Plots of originally observed Y vs X and regressed Y vs X show good capture of the fundamental `X^2` coefficient as well as a good fit:
 
-![Observed data](../assets/regression_8.png)
+![Observed data](../assets/regression_8.webp)
 
 and
 
-![Regressed data](../assets/regression_10.png)
+![Regressed data](../assets/regression_10.webp)
 
 And finally, observed Y vs Y regressed show a strong linear relatinon of slope almost 1, but with visibly increasing errors towards the right extreme:
 
-![Y observed vs Y regressed](../assets/regression_9.png)
+![Y observed vs Y regressed](../assets/regression_9.webp)
 
 ### Conclusions - simple linear regression
 
@@ -285,17 +285,17 @@ The data is chosen in such a way that it presents multicollinearity and categori
 
 First step is to see if maybe a simple regression based on the average estimation given by developers is enough. We notice than, while the trend in task duration correlates with both average estimation and the code complexity, neither are good predictors - rather low R^2 in both cases as well as two divergent trends in the first chart. Both elements hint towards more factors needed to be included in the regression.
 
-![Exploratory analysis - regression against one variable](../assets/regression_12.png)
+![Exploratory analysis - regression against one variable](../assets/regression_12.webp)
 
 A second step, which we will skip now, is to analyse the duration based solely on time. If we were to do this, we would have to switch to percentage returns to remove the trendiness in data, as explained in a previous section.
 
 The third step is to analyse muticollinearity. When we start scatter-plotting one variable against the other, we notice very strong correlations - note that, for estimations, they are from the start based on Fibonnaci numbers, thus the several parallel lines instead of a cloud of points.
 
-![Exploratory analysis - multicollinearity](../assets/regression_13.png)
+![Exploratory analysis - multicollinearity](../assets/regression_13.webp)
 
 From the multicollinear variables, seems the "Average Estimation" explains the best the variation in duration, thus we will keep it and discard the rest.
 
-![Exploratory analysis - select one variable out of several](../assets/regression_14.png)
+![Exploratory analysis - select one variable out of several](../assets/regression_14.webp)
 
 After doing our analysis, we will take into consideration the following factors:
 - Backend task
@@ -415,7 +415,7 @@ print(adjusted_r_squared(Y, Y_regressed, len(factors)))
 
 With the following results:
 
-![Regression analysis](../assets/regression_15.png)
+![Regression analysis](../assets/regression_15.webp)
 
 It is obvious that except some outliers the residuals are quite normally distributed. However, they have a trend upwards which should be investigated.
 

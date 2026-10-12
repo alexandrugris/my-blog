@@ -134,13 +134,13 @@ n = np.argmax(v[0] - v[1])
 print(f"recommended threshold = {v[2][n]} with sensitivity = {v[0][n]} and specificity={1-v[1][n]}")
 ```
 
-![ROC](../assets/classification_1.png)
+![ROC](../assets/classification_1.webp)
 
 The AUC (area under the curve) or, in our case, better said AUROC (area under the ROC), is a measure of how good the classifier is. The larger the area, the better the classifier. In our case above, the classifier is pretty weak to start with.
 
 In addition to the ROC curves, it can be very useful to examine the precision-recall curve [(PR-curve)](https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html). These are especially useful for imbalanced outcomes. Below is an example for the precision / recall curve:
 
-![PR-curve](../assets/classification_2.png)
+![PR-curve](../assets/classification_2.webp)
 
 In the example above, precision starts to fall sharply around 80% recall. In this case, we probably want to select a precision/recall tradeoff just before that drop for example, at around 60% recall. A good classifier has a PR-curve which gets closer to the top-right corner.
 
@@ -191,7 +191,7 @@ digit = X_train[1000].reshape(28, 28)
 plt.imshow(digit, cmap=matplotlib.cm.binary, interpolation="nearest") 
 ```
 
-![A random image from the dataset](../assets/classification_5.png)
+![A random image from the dataset](../assets/classification_5.webp)
 
 
 Train a classifier and predict a positive and a negative case, just for testing purposes. Success.
@@ -237,7 +237,7 @@ plt.show()
 ```
 
 The curve looks quite steep, which gives the impression of a good classifier. 
-![ROC-curve](../assets/classification_3.png)
+![ROC-curve](../assets/classification_3.webp)
 
 But when we do the same with the precision-recall curve, we see the results are less outstanding. That is because we have a minority class we want to classify and the PR-curve is better suited for it. But before that, let's look at the `cross_val_predict` function and then compute the classification metrics described at the beginning of this article.
 
@@ -270,5 +270,5 @@ plot_precision_recall_curve(sgd_c, X_train, y_train == '5')
 
 The not so steep Precision-Recall curve:
 
-![PR-curve](../assets/classification_4.png)
+![PR-curve](../assets/classification_4.webp)
 

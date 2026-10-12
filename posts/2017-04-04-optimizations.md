@@ -92,7 +92,7 @@ plt.show();
 
 Output:
 
-![Image](../assets/optimizations_1_1.png)
+![Image](../assets/optimizations_1_1.webp)
 
 In the image above it is visible the solution space is very small (the triangle) yet the point for which the target function is maximized is found.
 
@@ -354,20 +354,20 @@ print(ret, evaluate_x_sin_x(ret))
 
 Second iteration - we already see some signs of clustering towards higher values.
 
-![Second iteration](../assets/optimizations_1_3.png)
+![Second iteration](../assets/optimizations_1_3.webp)
 
 Several iterations later clustering towards higher values is more pronounced but we also notice the side effect of the left peak becoming an attractor.
 
-![Several iterations later](../assets/optimizations_1_4.png)
+![Several iterations later](../assets/optimizations_1_4.webp)
 
 Several more iterations we still have values in the right peak, but the attraction of the left peak is already very strong.
 
-![Many iteratiosn later](../assets/optimizations_1_5.png)
+![Many iteratiosn later](../assets/optimizations_1_5.webp)
 
 A new snip towards the end of the evolution and one after the algorithm has dynamically increased the randomness added to the population to explore new possible solution spaces.
 
-![Towards the end](../assets/optimizations_1_6.png)
-![Increase in randomness in the population](../assets/optimizations_1_7.png)
+![Towards the end](../assets/optimizations_1_6.webp)
+![Increase in randomness in the population](../assets/optimizations_1_7.webp)
 
 ### Next Steps
 

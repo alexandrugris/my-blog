@@ -132,7 +132,7 @@ data['xGA_regress'] = np.dot(X, betas_a)
 
 The results for the two methods are highlighted in the dataframe below:
 
-![Expected Goals Reverse Engineered](../assets/xg_1.png)
+![Expected Goals Reverse Engineered](../assets/xg_1.webp)
 
 Now let's look at the RMSE for the two methods. For in-sample RMSE we obtain lower RMSE for the Poisson regression. However, the difference is very small:
 
@@ -254,7 +254,7 @@ Huddersfield    0.014049 -4.265229
 
 Since the obtained the rank values fall very quickly very fast, we logged them to get smoother results.
 
-![Team Ranks](../assets/xg_2.png)
+![Team Ranks](../assets/xg_2.webp)
 
 ```python
 # put data
@@ -288,15 +288,15 @@ rmse_regress_a = np.sqrt(mean_squared_error(X['FTAG'], X['RankBasedRegression_A'
 
 We can now observe the regression coefficients, the p-value for each coefficient showing that all features are relevant, as well as the RMSE for home and away expected goals vs real goals. The RMSE is better than the previous two models, but I expect this is due to the dataset as well as the in-sample regression test: 
 
-![RMSE and Regression Summary](../assets/xg_4.png)
+![RMSE and Regression Summary](../assets/xg_4.webp)
 
 And below the full view of the regression parameters and expected goals:
 
-![Expected Goals](../assets/xg_5.png)
+![Expected Goals](../assets/xg_5.webp)
 
 Putting all 3 methods side by side, we can see that even this simple rank-based model, oblivious of bookmakers odds, has very good potential and it is worth improving further on.
 
-![Expected goals all side by side](../assets/xg_6.png)
+![Expected goals all side by side](../assets/xg_6.webp)
 
 
 

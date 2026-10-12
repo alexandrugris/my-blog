@@ -94,7 +94,7 @@ will get get us the list of all Kafka binaries. Let's connect to one of the two 
 docker exec -it testkafka_kafka_2 bash
 ```
 
-![Kafka Connection](../assets/kafka_1.png)
+![Kafka Connection](../assets/kafka_1.webp)
 
 However, if JMX is still specified, the `JMX_PORT` is already set and in use by the Kafka daemon, so in order to run commands to Kafka we need to make a little hack:
 
@@ -105,7 +105,7 @@ $>KAFKA_JMX_OPTS=""
 
 Then we can play:
 
-![Kafka Commands](../assets/kafka_2.png)
+![Kafka Commands](../assets/kafka_2.webp)
 
 To produce messages to `my_topic`:
 
@@ -150,7 +150,7 @@ Apache Kafka is a high-throughput distributed pub-sub messaging system, with on-
 
  When we connect to both docker instances that we started in our demo cluster, because we set for topic `my_topic` 2 partitions and replication factor 2, we see the same picture:
 
- ![One topic, 2 partitions, replication factor 2](../assets/kafka_3.png)
+ ![One topic, 2 partitions, replication factor 2](../assets/kafka_3.webp)
 
  In the image above, `ISR` means in-sync replicas. If we decide to kill one docker container, we get:
 
@@ -234,20 +234,20 @@ And some screenshots:
 
 *Debugger Configuration in Idea*
 
-![Debugger Config Idea](../assets/kafka_4.png)
+![Debugger Config Idea](../assets/kafka_4.webp)
 
 *Breakpoint in remote debugging config*
-![Debugger Breakpoint](../assets/kafka_5.png)
+![Debugger Breakpoint](../assets/kafka_5.webp)
 
 *Cluster up, with bash started on app node*
-![Cluster](../assets/kafka_6.png)
+![Cluster](../assets/kafka_6.webp)
 
 *Produced messages in the queue*
-![Messages](../assets/kafka_7.png)
+![Messages](../assets/kafka_7.webp)
 
 *New topic created, ballanced, with 5 partitions and 2 replicas*
 
-![Messages](../assets/kafka_8.png)
+![Messages](../assets/kafka_8.webp)
 
 ### Partitioning and producing messages
 
@@ -339,7 +339,7 @@ The result of the per-first-letter partitioner when run:
 $>/opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic alexandrugris.my_topic --partition 0 --from-beginning
 ```
 
-![Messages](../assets/kafka_9.png)
+![Messages](../assets/kafka_9.webp)
 
 ### Consuming messages
 
@@ -425,7 +425,7 @@ consumer.subscribe(topicPatterns.stream().map(TopicPattern::getTopic).collect(Co
 // consumer.assign(topicPatterns.stream().map( TopicPattern::getPartition).collect(Collectors.toList()));
 ```
 
-![With subscribe not assign](../assets/kafka_10.png)
+![With subscribe not assign](../assets/kafka_10.webp)
 
 ### Topics not covered:
 

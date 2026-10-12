@@ -95,7 +95,7 @@ int main()
 
 And here is the output:
 
-![Console output from the code above](../assets/cpp_multithreading_console.png)
+![Console output from the code above](../assets/cpp_multithreading_console.webp)
 
 ### Thread Local Storage
 

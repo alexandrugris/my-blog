@@ -40,7 +40,7 @@ plot_tree(dt)
 plt.show()
 
 ```
-![Decision Tree Visualization](../assets/decision_trees_1.png)
+![Decision Tree Visualization](../assets/decision_trees_1.webp)
 
 The tree above is a regression tree, built with numeric features.
 
@@ -145,11 +145,11 @@ for c in df_categorical.columns:
 
 Given the results below, we would choose feature `ed` for split as it gives the highest entropy decrease.
 
-![Feature selection](../assets/decision_trees_2.png)
+![Feature selection](../assets/decision_trees_2.webp)
 
 Broken down into individual steps, for the variable `ed` the intermediate results from each step are shown in the image below:
 
-![Entropy gain](../assets/decision_trees_3.png)
+![Entropy gain](../assets/decision_trees_3.webp)
 
 The next step is to find the right splitting point. We are going to use a measure called Gini Impurity to split the node in two partitions, each as pure a possible.
 
@@ -232,11 +232,11 @@ Let's observe a little bit the data in between steps.
 
 The gini dataframe, after initial setup and sorting by probabilities:
 
-![gini dataframe](../assets/decision_trees_4.png)
+![gini dataframe](../assets/decision_trees_4.webp)
 
 Impurity calculated in the loop, for each combination of possible values in the left-right nodes:
 
-![gini dataframe](../assets/decision_trees_5.png)
+![gini dataframe](../assets/decision_trees_5.webp)
 
 ### Gini Impurity for Continuous Independent Variables
 
@@ -257,7 +257,7 @@ gini[dependent_var] = y
 gini.sort_values([continuous_var], ascending=True, inplace=True)
 ```
 
-![Sorted by continuous independent variable](../assets/decision_trees_6.png)
+![Sorted by continuous independent variable](../assets/decision_trees_6.webp)
 
 In our case, the `age` looks more like a categorical variable with many classes, but we will treat it as a continuous variable. This is why, in the next step we uniquify it.
 
@@ -327,7 +327,7 @@ Let's investigate a little bit the results now. We'll look at two things:
 counts = pd.crosstab(gini['age'], gini['churn'])
 ```
 
-![counts of age and churn](../assets/decision_trees_7.png)
+![counts of age and churn](../assets/decision_trees_7.webp)
 
 and
 
@@ -335,7 +335,7 @@ and
 df_splits[['Gini left', 'Gini right', 'Total impurity']].plot(figsize=(15, 15))
 ```
 
-![counts of age and churn](../assets/decision_trees_8.png)
+![counts of age and churn](../assets/decision_trees_8.webp)
 
 We observe the following:
 

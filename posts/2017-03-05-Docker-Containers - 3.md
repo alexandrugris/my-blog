@@ -46,7 +46,7 @@ c:>docker inspect SQLServer_AGris | grep IPAddress | awk "/[0-9]/ { print $2 }" 
 
 And connect using the SQL Server Management Studio:
 
-![SQL Server Management Studio](../assets/docker_3_1.png)
+![SQL Server Management Studio](../assets/docker_3_1.webp)
 
 
 ### Play with volumes - persistent data between containers start / stop / remove
@@ -99,7 +99,7 @@ c:>docker stop my_sql_agris
 
 Run again the server and the mysql client to verify the database still exists. In this case it was called "test".
 
-![Database Test still Exists](../assets/docker_3_2.png)
+![Database Test still Exists](../assets/docker_3_2.webp)
 
 ### Docker Compose
 
@@ -143,11 +143,11 @@ c:>docker run -it mysql mysql --user=root --password=QAZxsw123 --host=172.22.96.
 
 Note: `--host=172.22.96.1` comes from running `ipconfig`:
 
-![ipconfig](../assets/docker_3_3.png)
+![ipconfig](../assets/docker_3_3.webp)
 
 And the result is:
 
-![Database Test still Exists](../assets/docker_3_4.png)
+![Database Test still Exists](../assets/docker_3_4.webp)
 
 Please note that, because I continue to mount the same volume named `agris_data`, the database `test` I have created earlier is still there. 
 However, if you deleted the volume, you will get the following error from `docker-compose up`:
@@ -177,7 +177,7 @@ c:>docker network ls
 c:>docker network inspect cppplaylinux_default
 ```
 
-![docker network inspect](../assets/docker_3_5.png)
+![docker network inspect](../assets/docker_3_5.webp)
 
 And we see:
 
@@ -199,7 +199,7 @@ All user-defined networks have a embedded DNS server. Thus, assuming we add anot
 c:>docker run -it --rm --name ash --network cppplaylinux_default alpine-ssh sh
 ```
 
-![ping](../assets/docker_3_6.png)
+![ping](../assets/docker_3_6.webp)
 
 In the end:
 

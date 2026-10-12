@@ -109,7 +109,7 @@ expected_goals.columns=['HomeTeam', 'AwayTeam', 'xGH', 'xGA', 'HOdds', 'DOdds', 
 
 What we get is this:
 
-![odds_models](../assets/odds_and_models_1.png)
+![odds_models](../assets/odds_and_models_1.webp)
 
 Disclaimer: I know that I am making an error here, because I am including in the source data set the same match that I am trying to predict, which leads to a circular relationship. In a production-ready analysis, at least this match should have been excluded from the source.
 
@@ -123,7 +123,7 @@ plt.scatter(1/expected_goals['DOdds'], 1/expected_goals['BbAvD'])
 plt.scatter(1/expected_goals['AOdds'], 1/expected_goals['BbAvA'])
 ```
 
-![odds_models](../assets/odds_and_models_2.png)
+![odds_models](../assets/odds_and_models_2.webp)
 
 Doing linear regression between our values and the bookmakers values we get:
 
@@ -149,7 +149,7 @@ for s in ['H', 'D', 'A']:
             } 
 ```
 
-![odds_models](../assets/odds_and_models_3.png)
+![odds_models](../assets/odds_and_models_3.webp)
 
 ### Conclusions To Our First Model
 
@@ -189,7 +189,7 @@ def attack_defence_spread(row):
 atk_def_spread = data.apply(attack_defence_spread, axis=1, result_type='expand')
 atk_def_spread.columns = ['Home', 'Away', 'AtkH', 'DefH', 'AtkA', 'DefA', 'Spread']
 ```
-![odds_models](../assets/odds_and_models_4.png)
+![odds_models](../assets/odds_and_models_4.webp)
 
 Second step is to do regression analysis. We have chosen as predictor variables the attack and defece strengths of our opponent teams.
 
@@ -218,11 +218,11 @@ Spread    1.168656e-17
 dtype: float64
 ```
 
-![odds_models](../assets/odds_and_models_5.png)
+![odds_models](../assets/odds_and_models_5.webp)
 
 However, the results of the regression are a little bit counter intuitive:
 
-![odds_models](../assets/odds_and_models_6.png)
+![odds_models](../assets/odds_and_models_6.webp)
 
 Now we are going to do the last step of this analysis and we are going to compute the odds of home draw away based on the residuals. We are going to use cumulative distribution function in this case which, by definition, is `p(A <= x) = cdf(x)`. Since our distribution of residuals is normal, we will use the `norm.cdf` function.
 
@@ -235,13 +235,13 @@ atk_def_spread['Predicted Spread'] = y_pred
 atk_def_spread['Computed Home Prob'] = 1 - norm.cdf(0, loc=y_pred, scale=e.std())
 ```
 
-![odds_models](../assets/odds_and_models_7.png)
+![odds_models](../assets/odds_and_models_7.webp)
 
 ### Comparing New Odds to Bookmaker's Odds
 
 The scatter plot: 
 
-![odds_models](../assets/odds_and_models_8.png)
+![odds_models](../assets/odds_and_models_8.webp)
 
 The regression parameters: 
 
@@ -294,7 +294,7 @@ So, in theory, the bookmakers are able to predict with lesser accuracy the proba
 
 In the computation above I have not included the correction factors resulted from regression. When I introduce the factors manually, the results are impressively close:
 
-![odds_models](../assets/odds_and_models_9.png)
+![odds_models](../assets/odds_and_models_9.webp)
 
 
 
